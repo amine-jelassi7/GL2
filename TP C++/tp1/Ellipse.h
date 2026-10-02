@@ -2,8 +2,7 @@
 #define ELLIPSE_H
 
 class Ellipse {
-private:
-
+protected:
     float cX, cY;
     float a, b;
 
