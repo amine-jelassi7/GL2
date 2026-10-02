@@ -14,7 +14,7 @@ int main() {
     e2.affiche();
     e3.affiche();
 
-    std::cout << "\ntests des méthodes deplace, zoom et surface" << std::endl;
+    std::cout << "\ntests des methode deplace, zoom et surface" << std::endl;
     e2.deplace(50.0f, 0.0f);
     e2.zoom(1.5f);
     e2.affiche();
