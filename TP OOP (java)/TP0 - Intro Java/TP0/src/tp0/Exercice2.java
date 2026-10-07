@@ -2,7 +2,7 @@ package tp0;
 
 import java.util.Scanner;
 
-public class exercice2 {
+public class Exercice2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Entrer un mot de passe: ");

@@ -2,7 +2,9 @@ package tp0;
 
 import java.util.Scanner;
 
-public class exercice0 {
+public class Exercice0 {
+    public static final int NOTE_MAXIMALE = 20;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
