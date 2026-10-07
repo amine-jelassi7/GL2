@@ -29,19 +29,21 @@ public class exercice1 {
             num /= 10;
         }
 
-        System.out.println("Chiffres pairs: " + pair + " (Somme: " + somme_pair + ")");
-        System.out.println("Chiffres impairs: " + impair + " (Somme: " + somme_impair + ")");
 
-        if((somme_impair == somme_pair) && (pair == impair))
+        System.out.println("Chiffres pairs: " + pair);
+        System.out.println("Chiffres impairs: " + impair);
+        System.out.println("Somme paire : " + somme_pair);
+        System.out.println("Somme impaire : " + somme_impair);
+
+
+        if ((somme_impair == somme_pair) && (pair == impair))
         {
-            System.out.println("ce nombre est equilibre");
+            System.out.println("EQUILIBRE");
         }
         else
         {
-            System.out.println("ce nombre n'est pas equilibre");
+            System.out.println("NON EQUILIBRE");
         }
-
-
 
         scanner.close();
     }
