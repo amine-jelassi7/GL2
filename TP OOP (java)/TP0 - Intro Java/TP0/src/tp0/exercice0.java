@@ -14,10 +14,10 @@ public class exercice0 {
         double moyenne = (note1 + note2) / 2.0;
 
         if (moyenne >= 10) {
-            System.out.println("Admis");
+            System.out.println("Resultat : Admis");
             System.out.println("moyenne: " + moyenne);
         } else {
-            System.out.println("Ajourné");
+            System.out.println("Resultat : Ajourné");
             System.out.println("moyenne: " + moyenne);
         }
 
