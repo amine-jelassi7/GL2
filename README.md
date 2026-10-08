@@ -8,10 +8,10 @@ A collaborative repository for storing assignments, lab work, and group projects
 
 | Name | Role | GitHub |
 | :--- | :--- | :--- |
-| **Amine Jelassi** | Software Engineering Student | [@amine-jelassi7](https://github.com) |
-| **Rayen Mnif** | Software Engineering Student | [@RayenMnif](https://github.com) |
-| **Med Aziz Ayari** | Software Engineering Student | [@XAFKTHECODER](https://github.com) |
-| **Youssef Ben Arbia** | Software Engineering Student | [@YWilix](https://github.com) |
+| **Amine Jelassi** | Software Engineering Student | [@amine-jelassi7](https://github.com/amine-jelassi7) |
+| **Rayen Mnif** | Software Engineering Student | [@RayenMnif](https://github.com/RayenMnif) |
+| **Med Aziz Ayari** | Software Engineering Student | [@XAFKTHECODER](https://github.com/XAFKTHECODER) |
+| **Youssef Ben Arbia** | Software Engineering Student | [@YWilix](https://github.com/YWilix) |
 
 
 ---
