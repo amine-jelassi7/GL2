@@ -2,7 +2,7 @@ package tp0;
 
 import java.util.Scanner;
 
-public class exercice1 {
+public class Exercice1 {
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
