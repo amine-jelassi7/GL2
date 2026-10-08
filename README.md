@@ -17,10 +17,10 @@ A collaborative repository for storing assignments, lab work, and group projects
 ## 📁 Repository Structure
 
 
-TP (subject name)
-├── tp-01/ 
-|   └──/ #tp files      
+TP-Subject-Name/
+├── tp-01/
+│   └── ...              # TP 01 files
 ├── tp-02/
-|   └──/ #tp files       
+│   └── ...              # TP 02 files
 ├── ...
 └── README.md
