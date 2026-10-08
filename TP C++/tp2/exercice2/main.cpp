@@ -19,7 +19,7 @@ int main() {
     t.getTime();
     std::cout <<std::endl <<  "tester la fonction additionnel (toSeconds) : "  << t.toSeconds() << std::endl;
 
-    
+
 
 
 
