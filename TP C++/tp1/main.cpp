@@ -5,6 +5,8 @@
 
 
 int main() {
+
+
     std::cout << "instanciations et constructeurs d'ellipse" << std::endl;
     Ellipse e1;
     Ellipse e2(2.5f, 6.5f, 12.0f, 15.0f);
@@ -36,6 +38,9 @@ int main() {
 
     delete p1;
     delete p2;
+    
+
+
 
     return 0;
 }
