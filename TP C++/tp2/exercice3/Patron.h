@@ -1,22 +1,23 @@
-#ifndef PATRON_H
-#define PATRON_H
+//
+// Created by rayen on 10/9/26.
+//
 
+#ifndef TP2_PATRON_H
+#define TP2_PATRON_H
 #include "Personnel.h"
-#include <string>
+#include <iostream>
 
-class Patron : public Personnel {
-private:
-    double ba;
-    std::string mv;
 
-public:
-    Patron();
-    Patron(std::string nom, std::string position, float salaire, float bonus, std::string marque);
-
-    float calculer_revenu_annuel();
-    void saisie_patron();
-    void affiche_patron() const;
+class Patron: public Personnel {
+    private:
+        float ba;
+        string mv;
+    public:
+        Patron(const string &nom, const string &position,const float &salaire, const float &ba, const string &mv);
+        Patron();
+        void saisie_patron();
+        void affiche_patron() const;
 };
 
-#endif
 
+#endif //TP2_PATRON_H

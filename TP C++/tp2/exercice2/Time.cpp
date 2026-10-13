@@ -1,46 +1,34 @@
 #include "Time.h"
-#include <cstdio>
+#include <iomanip>
+#include <iostream>
 
-Time::Time() : hours(0), minutes(0), seconds(0) {}
+using namespace std;
 
-Time::Time(int h, int m, int s) : hours(h), minutes(m), seconds(s) {}
+Time::Time(int h, int m, int s) : hours(h), minutes(m), seconds(s) {};
 
-Time::~Time() {}
+Time::Time() : hours(0), minutes(0), seconds(0){}
 
-int Time::getHours() {
-    return this->hours;
+void Time::getTime() const{
+    cout << setfill('0') << setw(2) << hours << ":" 
+         << setw(2) << minutes << ":" 
+         << setw(2) << seconds << endl;
 }
-
-int Time::getMin() {
-    return this->minutes;
+int Time::getMin() const{
+    return minutes;
 }
-
-int Time::getSec() {
-    return this->seconds;
+int Time::getSec() const{
+    return seconds;
 }
-
-void Time::getTime() {
-    std::printf("%02d:%02d:%02d\n", this->hours, this->minutes, this->seconds);
+int Time::getHours() const{
+    return hours;
 }
-
-void Time::addTime(Time& t1, Time& t2) {
-    int total_seconds = t1.seconds + t2.seconds;
-    int total_minutes = t1.minutes + t2.minutes + (total_seconds / 60);
-
-    this->seconds = total_seconds % 60;
-    this->minutes = total_minutes % 60;
-    this->hours = t1.hours + t2.hours + (total_minutes / 60);
-}
-
-
-void Time::setTime(int h, int m, int s) {
-    this->hours = h;
-    this->minutes = m;
-    this->seconds = s;
-}
-
-
-int Time::toSeconds()
-{
-    return (this->hours * 3600) + (this->minutes * 60) + this->seconds;
+void Time::addTime(Time const &t1, Time const &t2) {
+    int h = t1.getHours() + t2.getHours();
+    int m = t1.getMin() + t2.getMin();
+    int s = t1.getSec() + t2.getSec();
+    m += s/60;
+    h += m/60;
+    hours = h; 
+    minutes = m % 60;
+    seconds = s % 60;
 }

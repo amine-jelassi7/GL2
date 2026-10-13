@@ -1,10 +1,6 @@
-cmake_minimum_required(VERSION 4.2)
-project(exercice3)
+cmake_minimum_required(VERSION 4.1)
 
-set(CMAKE_CXX_STANDARD 20)
-
-add_executable(exercice3 main.cpp
-        Personnel.cpp
-        Personnel.h
-        Patron.cpp
-        Patron.h)
+project(TP2)
+add_subdirectory(exercice1)
+add_subdirectory(exercice2)
+add_subdirectory(exercice3)

@@ -1,26 +1,31 @@
+//
+// Created by rayen on 10/9/26.
+//
+
 #include "Patron.h"
-#include <iostream>
 
-Patron::Patron() : Personnel(), ba(0.0), mv("") {}
 
-Patron::Patron(std::string nom, std::string position, float salaire, float bonus, std::string marque)
-    : Personnel(nom, position, salaire), ba(bonus), mv(marque) {}
+Patron::Patron(const string &nom, const string &position,const float &salaire, const float &ba, const string &mv) : Personnel(nom, position, salaire), ba(ba), mv(mv){
 
-void Patron::saisie_patron() {
+}
+
+Patron::Patron() {
+    saisie_patron();
+}
+
+void Patron::saisie_patron(){
     saisie_personnel();
-    std::cout << "bonus annuel = ";
-    std::cin >> ba;
-    std::cout << "Marque de voiture = ";
-    std::cin >> mv;
+    cout << "===" << endl;
+    cout << "bonus annuel: "; cin >> ba; 
+    cout << "marque de voiture: "; cin >> mv;
+    cout << endl;
 }
 
-void Patron::affiche_patron() const {
+void Patron::affiche_patron() const{
+    cout << "==== patron ====" << endl; 
     affiche_personnel();
-    std::cout << "bonus annuel = " << ba << "\n"
-              << "Marque de voiture = " << mv << "\n";
+    cout << "===============" << endl;
+    cout << "bonus annuel: " << ba << endl;
+    cout << "marque de voiture: " << mv << endl;
+    cout << endl;
 }
-
-float Patron::calculer_revenu_annuel() {
-    return (salaire * 12) + ba;
-}
-

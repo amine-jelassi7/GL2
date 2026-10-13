@@ -1,33 +1,36 @@
+//
+// Created by rayen on 10/9/26.
+//
+
 #include "Personnel.h"
-#include <iostream>
 
-
-Personnel::Personnel() : nom(""), position(""), salaire(0.0) {}
-
-Personnel::Personnel(std::string nom, std::string position, float salaire)
-    : nom(nom), position(position), salaire(salaire) {}
 
 void Personnel::affiche_personnel() const {
-    std::cout << "Nom : " << nom << "\n"
-              << "Position : " << position << "\n"
-              << "Salaire : " << salaire << "\n";
+    cout << "== personnel ==" << endl; 
+    cout << "nom: " << nom << endl;
+    cout << "post: " << position << endl;
+    cout << "salaire: " << salaire << endl;
 }
 
-void Personnel::saisie_personnel() {
-    std::cout << "Nom : ";
-    std::cin >> nom;
-    std::cout << "Position : ";
-    std::cin >> position;
-    std::cout << "Salaire : ";
-    std::cin >> salaire;
-}
-void Personnel::augmenter_salaire(float pourcentage) {
-    salaire += salaire * (pourcentage / 100.0);
-}
-void affiche_externe(Personnel p) {
-    std::cout << "Nom : " << p.nom << "\n"
-              << "Position : " << p.position << "\n"
-              << "Salaire : " << p.salaire << "\n";
+Personnel::Personnel(): nom(""), position(""), salaire(0.0){
+    
 }
 
+void Personnel::saisie_personnel(){
+    cout << "nom: "; cin >> nom;
+    cout << "post: "; cin >> position;
+    cout << "salaire: "; cin >> salaire;
+}
 
+void affiche_externe(Personnel p){
+    p.affiche_personnel();
+    cout << endl;
+}
+
+void Personnel::changer_salaire(){
+    cout << "nv salaire de "<< nom << " (" << position << "): "; cin >> salaire;
+}
+
+void Personnel::changer_position(){
+    cout << "nv position de "<< nom << " (" << position << "): "; cin >> position;
+}

@@ -1,28 +1,21 @@
-#ifndef EXERCICE2_TIME_H
-#define EXERCICE2_TIME_H
+#ifndef UNTITLED_TIME_H
+#define UNTITLED_TIME_H
+
 
 class Time {
-protected:
-    int hours;
-    int minutes;
-    int seconds;
-
-public:
-    Time();
-    Time(int h, int m, int s);
-    virtual ~Time();
-
-
-    int getHours();
-    int getMin();
-    int getSec();
-
-    void getTime();
-    void addTime(Time& t1, Time& t2);
-
-
-    void setTime(int h, int m, int s);
-    int toSeconds();
+    protected:
+        int hours;
+        int minutes;
+        int seconds;
+    public:
+        Time();
+        Time(int h, int m, int s);
+        void getTime() const;
+        int getHours() const;
+        int getMin() const;
+        int getSec() const;
+        void addTime(Time const &t1, Time const &t2);
 };
 
-#endif // EXERCICE2_TIME_H
+
+#endif 
