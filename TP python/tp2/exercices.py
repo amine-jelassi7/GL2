@@ -51,7 +51,7 @@ def compter_occurrences(phrase: str) -> dict[str, int]:
 #ces deux fonction sont de meme exercice (bl3arbi nest7a9 fonction saisir ll fonction chercher)
 
 def saisir_etudiants() -> dict[tuple[str, str], float]:
-    etudiants: sict[tuple[str, str], float] = {}
+    etudiants: dict[tuple[str, str], float] = {}
 
     nb_etudiants: int = int(input("Combien d'étudiants souhaitez-vous saisir ? "))
 
