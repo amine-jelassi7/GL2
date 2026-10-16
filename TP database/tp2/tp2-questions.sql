@@ -1,3 +1,5 @@
+use cinema;
+
 --question1
 select Titre from Film order by Titre asc;
 
