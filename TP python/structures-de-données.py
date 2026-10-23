@@ -2,14 +2,8 @@
 def liste_exercice1 ():
     liste = [1,23,46,56,75,6,86]
 
-    L_pair = []
-    L_impair = []
-
-    for i in range(len(liste)):
-        if liste[i]%2==0:
-            L_pair.append(liste[i])
-        else :
-            L_impair.append(liste[i])
+    L_pair = [l for l in liste if l % 2 == 0]
+    L_impair = [l for l in liste if l % 2 == 1]
 
     print(L_pair)
     print(L_impair)
@@ -38,11 +32,6 @@ def liste_exercice4 ():
     new_l = [L[x//3][x%3] for x in range(len(L)*len(L[0])) ]
 
     print(new_l)
-
-def liste_exercice4_methode2 ():
-    L = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    flat = [item for sublist in L for item in sublist]
-    print(flat)
 
 def liste_exercice5() :
     def aff(M): 
