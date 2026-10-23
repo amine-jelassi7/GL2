@@ -7,20 +7,28 @@ Patron::Patron(std::string nom, std::string position, float salaire, float bonus
     : Personnel(nom, position, salaire), ba(bonus), mv(marque) {}
 
 void Patron::saisie_patron() {
-    saisie_personnel();
+    Personnel::saisie_personnel();
     std::cout << "bonus annuel = ";
     std::cin >> ba;
     std::cout << "Marque de voiture = ";
     std::cin >> mv;
 }
 
+void Patron::saisie_personnel() {
+    saisie_patron();
+}
+
 void Patron::affiche_patron() const {
-    affiche_personnel();
+    Personnel::affiche_personnel();
     std::cout << "bonus annuel = " << ba << "\n"
               << "Marque de voiture = " << mv << "\n";
 }
 
-float Patron::calculer_revenu_annuel() {
+void Patron::affiche_personnel() const {
+    affiche_patron();
+}
+
+float Patron::calculer_revenu_annuel() const {
     return (salaire * 12) + ba;
 }
 

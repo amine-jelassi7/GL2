@@ -13,9 +13,10 @@ protected:
 public:
     Personnel();
     Personnel(std::string nom, std::string position, float salaire);
+    virtual ~Personnel() = default;
 
-    void affiche_personnel() const;
-    void saisie_personnel();
+    virtual void affiche_personnel() const;
+    virtual void saisie_personnel();
 
     void augmenter_salaire(float pourcentage);
     friend void affiche_externe(Personnel p);
