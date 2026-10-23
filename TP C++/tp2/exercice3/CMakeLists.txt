@@ -7,4 +7,6 @@ add_executable(exercice3 main.cpp
         Personnel.cpp
         Personnel.h
         Patron.cpp
-        Patron.h)
+        Patron.h
+        ListePersonnel.cpp
+        ListePersonnel.h)
