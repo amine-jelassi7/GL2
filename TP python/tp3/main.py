@@ -9,6 +9,7 @@ def parler_enthousiasme(msg:str,/,*,exclam:int =1,maj:bool = False)->str :
     msg += exclam*"!"
     return msg
 
+
 def creer_champ(
     nom: str,
     /,
