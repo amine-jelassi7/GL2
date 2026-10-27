@@ -1,6 +1,7 @@
 USE cinema;
 GO
 
+  
 -- Question 1
 SELECT Titre FROM Film ORDER BY Titre ASC;
 -- Question 2
