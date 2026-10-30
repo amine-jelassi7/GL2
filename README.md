@@ -6,10 +6,12 @@ A collaborative repository for storing assignments, lab work, and group projects
 
 ## 👥 Team Members
 
-* **Amine Jelassi** 
-* **Rayen Mnif** 
-* **Med Aziz Ayari** 
-* **Youssef Ben Arbia** 
+| Name | Role | GitHub |
+| :--- | :--- | :--- |
+| **Amine Jelassi** | Software Engineering Student | [@amine-jelassi7](https://github.com/amine-jelassi7) |
+| **Rayen Mnif** | Software Engineering Student | [@RayenMnif](https://github.com/RayenMnif) |
+| **Med Aziz Ayari** | Software Engineering Student | [@XAFKTHECODER](https://github.com/XAFKTHECODER) |
+| **Youssef Ben Arbia** | Software Engineering Student | [@YWilix](https://github.com/YWilix) |
 
 
 ---
@@ -17,10 +19,14 @@ A collaborative repository for storing assignments, lab work, and group projects
 ## 📁 Repository Structure
 
 
-TP-Subject-Name/
-├── tp-01/
-│   └── ...              # TP 01 files
-├── tp-02/
-│   └── ...              # TP 02 files
-├── ...
-└── README.md
+```text
+.
+├── 📂 TP-Subject-Name-01/
+│   ├── 📁 tp-01/           # Lab 01 source code & assets
+│   ├── 📁 tp-02/           # Lab 02 source code & assets
+│   └── 📄 README.md        # Subject-specific instructions
+├── 📂 TP-Subject-Name-02/
+│   ├── 📁 tp-01/
+│   └── 📄 README.md
+└── 📄 README.md            # Root repository documentation
+```
