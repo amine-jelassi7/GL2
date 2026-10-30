@@ -23,7 +23,7 @@ def creer_champ(
 
 def main()->None:
     #print(traiter_commande(1,12,remise=0,urgent=True))
-    print(parler_enthousiasme("bonjour senior",exclam=4,maj=True))
+    #print(parler_enthousiasme("bonjour senior",exclam=4,maj=True))
     #print(creer_champ("mot_de_passe", "password", placeholder="8+ caractères", minlength=8, class_="form-control"))
 
 
