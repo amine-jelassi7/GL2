@@ -13,4 +13,13 @@ public class ClassA {
     {
         return this.V2;
     }
+    public int add()
+    {
+        return V2 + V4;
+    }
+    public int add(int x)
+    {
+        //on appelle ce phenomene le surcharge (le fait d'avoir deux methode ayant le meme nom mais des parametres differents)
+        return x+V3;
+    }
 }
