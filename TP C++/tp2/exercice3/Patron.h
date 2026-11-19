@@ -5,18 +5,17 @@
 #ifndef TP2_PATRON_H
 #define TP2_PATRON_H
 #include "Personnel.h"
-#include <iostream>
 
 
 class Patron: public Personnel {
     private:
         float ba;
-        string mv;
+        std::string mv;
     public:
-        Patron(const string &nom, const string &position,const float &salaire, const float &ba, const string &mv);
+        Patron(const std::string &nom, const std::string &position, float salaire, float ba, const std::string &mv);
         Patron();
-        void saisie_patron();
-        void affiche_patron() const;
+        void saisie_personnel() override;
+        void affiche_personnel() const override;
 };
 
 

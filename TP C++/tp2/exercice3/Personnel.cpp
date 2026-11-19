@@ -3,17 +3,20 @@
 //
 
 #include "Personnel.h"
+#include <iostream>
+
+using namespace std;
 
 
 void Personnel::affiche_personnel() const {
-    cout << "== personnel ==" << endl; 
+    cout << "== personnel ==" << endl;
     cout << "nom: " << nom << endl;
     cout << "post: " << position << endl;
     cout << "salaire: " << salaire << endl;
 }
 
 Personnel::Personnel(): nom(""), position(""), salaire(0.0){
-    
+
 }
 
 void Personnel::saisie_personnel(){
@@ -22,8 +25,12 @@ void Personnel::saisie_personnel(){
     cout << "salaire: "; cin >> salaire;
 }
 
+// friend of Personnel: accesses the protected members directly
 void affiche_externe(Personnel p){
-    p.affiche_personnel();
+    cout << "== personnel ==" << endl;
+    cout << "nom: " << p.nom << endl;
+    cout << "post: " << p.position << endl;
+    cout << "salaire: " << p.salaire << endl;
     cout << endl;
 }
 

@@ -4,21 +4,21 @@
 
 #ifndef TP2_PERSONNEL_H
 #define TP2_PERSONNEL_H
-#include <iostream>
-
-using namespace std;
+#include <string>
 
 class Personnel {
     protected:
-        string nom;
-        string position;
+        std::string nom;
+        std::string position;
         float salaire;
     public:
         Personnel();
-        Personnel(string nom, string position, float salaire) : nom(nom), position(position), salaire(salaire) {}
-        void affiche_personnel() const;
-        void saisie_personnel();
+        Personnel(std::string nom, std::string position, float salaire) : nom(nom), position(position), salaire(salaire) {}
+        virtual ~Personnel() = default;      // needed to delete a Patron through a Personnel*
+        virtual void affiche_personnel() const;
+        virtual void saisie_personnel();
         friend void affiche_externe(Personnel personnel);
+        friend void test_polymorphisme();    // friend, as the assignment asks
         void changer_salaire();
         void changer_position();
 };
