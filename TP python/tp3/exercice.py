@@ -10,14 +10,14 @@ def exercice1(liste,transformer, filterer):
 
 
 def exercice2(etudiants):
-    
+    """
     paires = map(lambda e: (e["note"], e), etudiants)
     triee = sorted(paires, key=lambda paire: paire[0])
     etudiants_tries = list(map(lambda paire: paire[1], triee))
 
     return etudiants_tries
-    
-    #return sorted(etudiants, key=lambda e: e["note"])
+    """
+    return sorted(etudiants, key=lambda e: e["note"])
 
 
 if __name__ == '__main__':
