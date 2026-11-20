@@ -1,14 +1,16 @@
-def exercice1(): 
+def exercice1(transformer, filterer):
     list1 = [1, 2, 3, 4, 5]
-    def filter_nbre_pair(n):
-        return n % 2 == 0
-    list1 = list(filter(filter_nbre_pair, list1))
+    
+    #list1 = list(filter(lambda x: x % 2 == 0, list1))
+    #list1 = list(map(lambda n: n+1, list1))
 
-    list1 = list(map(lambda n: n+1, list1))
+    list1 = [transformer(n) for n in list1 if filterer(n)]
 
-    print(list1)
+    return list1
 
 
 
 if __name__ == '__main__':
-    exercice1()
+    l = exercice1(lambda n: n+1, lambda x: x % 2 == 0)
+
+    print(l)
