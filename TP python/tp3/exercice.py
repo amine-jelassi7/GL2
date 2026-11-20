@@ -19,12 +19,19 @@ def exercice2(etudiants):
     """
     return sorted(etudiants, key=lambda e: e["note"])
 
+class Cout : 
+    def __lshift__(self, string):
+        print(string)
+
 
 if __name__ == '__main__':
     list1 = [1, 2, 3, 4, 5]
     l = exercice1(list1, lambda n: n+1, lambda x: x % 2 == 0)
 
     #print(l)
+    cout = Cout()
+
+    cout << "amine"
 
     etudiants = [
     {"nom": "Amine", "note": 15},
