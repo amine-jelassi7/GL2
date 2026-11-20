@@ -4,8 +4,6 @@ using namespace std;
 class Compte {
     double solde;
 public:
-    // etc.
-    // surcharge de l'opérateur +=
     Compte(){solde=0;}
     friend void operator+=(Compte&,double);
     friend Compte operator+(Compte&,Compte&);
@@ -14,20 +12,13 @@ public:
     friend ostream& operator<< (ostream& out,const Compte& T);
 
 
-    //fonctions membres:
-    /*
-    void operator+=(double);
-    Compte operator+(Compte&);
-    */
+
 
     void affiche_compte(){
         cout <<"solde="<<solde<<endl;
     }
 };
 
-// L’opérateur += a été déclaré « friend » afin
-// de lui permettre d’accéder aux données « private»
-// de la classe « Compte ».
 
 void operator+=(Compte& c,double d){
     c.solde += d;
@@ -55,24 +46,6 @@ ostream& operator<< (ostream& out,const Compte& T) {
     out << "cout Solde: " << T.solde << endl;
     return out;
 }
-
-//fonction membres:
-
-/*
-void Compte::operator+=(double d){
-    solde += d;
-}
-
-Compte Compte::operator+(Compte& b){
-    Compte c;
-    c.solde=solde+b.solde;
-    return c;
-}
-*/
-
-// « X » est une instance de « Compte », les deux
-// appels suivants sont équivalents
-
 
 
 
