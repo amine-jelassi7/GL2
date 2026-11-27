@@ -119,7 +119,6 @@ def retry(max_tentatives):
 @retry(max_tentatives=5)
 def verifier_disponibilite(service):
     time.sleep(0.1)
-    # Simulation d'une panne aléatoire pour tester @retry et le seuil de 0.3 s
     if random.random() < 0.7:
         print(f"Le service '{service}' est indisponible.")
         return None
