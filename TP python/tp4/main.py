@@ -74,43 +74,57 @@ def dire_bonjour2():
 
 
 
-def Timer(func):
+def timer(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.perf_counter()
         try:
             return func(*args, **kwargs)
         finally:
-            end_time = time.perf_counter()
-            print(f"Temps d'exécution de {func.__name__}: {end_time - start_time:.6f} secondes")
+            duree = time.perf_counter() - start_time
+            if duree > 0.3:
+                print(
+                    f"Temps d'exécution de {func.__name__} supérieur à 0.3 secondes "
+                    f"({duree:.6f} secondes)"
+                )
+            else:
+                print(f"Temps d'exécution de {func.__name__} : {duree:.6f} secondes")
+
     return wrapper
 
 
-def retry(max_tentative):
+def retry(max_tentatives):
+    if max_tentatives < 1:
+        raise ValueError("max_tentatives doit être supérieur ou égal à 1.")
+
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
             last_error = None
-            for tentative in range(max_tentative):
+            for tentative in range(1, max_tentatives + 1):
                 try:
                     return func(*args, **kwargs)
                 except Exception as e:
                     last_error = e
-                    print(f"Tentative {tentative + 1} échouée : {e}")
-            print(f"Échec après {max_tentative} tentatives.")
-            if last_error:
-                raise last_error
+                    print(f"Tentative {tentative}/{max_tentatives} échouée : {e}")
+            print(f"Échec après {max_tentatives} tentatives.")
+            raise last_error
+
         return wrapper
+
     return decorator
 
 
-@Timer
-@retry(3)
+@timer
+@retry(max_tentatives=5)
 def verifier_disponibilite(service):
-    time.sleep(random.uniform(0.2, 0.8))  # Simule le temps de réponse
-    if random.random() < 0.7:             # 70 % de risque d'échec
-        raise ConnectionError(f"Le service '{service}' est indisponible.")
-    print(f"Le service '{service}' est disponible.")
+    time.sleep(0.1)
+    # Simulation d'une panne aléatoire pour tester @retry et le seuil de 0.3 s
+    if random.random() < 0.7:
+        print(f"Le service '{service}' est indisponible.")
+        return None
+        #raise ConnectionError(f"Le service '{service}' est indisponible.")
+    return f"Le service '{service}' est disponible."
 
 
 if __name__ == "__main__":
@@ -128,6 +142,6 @@ if __name__ == "__main__":
 
     
 
-    verifier_disponibilite("serveur")
+    print(verifier_disponibilite("serveur"))
 
     
