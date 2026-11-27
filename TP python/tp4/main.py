@@ -1,6 +1,7 @@
 from functools import wraps
 
 
+
 def repeter(n):
     def decorator(func):
         @wraps(func)
@@ -49,6 +50,27 @@ def positifs(func):
 def somme(a, b):
     return a + b
 
+def mesurer(seuil):
+    def mesure(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            import time
+            start_time = time.perf_counter()
+            result = func(*args, **kwargs)
+            end_time = time.perf_counter()
+
+            if end_time - start_time > seuil:
+                print(f"Temps d'exécution de {func.__name__}: {end_time - start_time:.6f} secondes")
+            return result
+        return wrapper
+    return mesure
+
+@mesurer(seuil=0.5)
+def dire_bonjour2():
+    import time
+    time.sleep(1) 
+    print("Bonjour avec délai !")
+
 if __name__ == "__main__":
     dire_bonjour()
     dire_au_revoir()
@@ -57,5 +79,9 @@ if __name__ == "__main__":
 
     print(somme(5, 10))  
     print(somme(-5, 10))
+
+    dire_bonjour2()
+
+    
 
     
